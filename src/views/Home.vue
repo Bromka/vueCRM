@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    Home Page
+    <div class="card-panel teal lighten-2">Home Page</div>
   </div>
 </template>
 
