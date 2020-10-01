@@ -18,16 +18,10 @@ import MainLayout from "./layouts/MainLayout.vue";
   }
 })
 export default class App extends Vue {
-  mounted() {
-    console.log(this.$router);
-    console.log(this.$route.meta);
-  }
 
   get layout() {
-    const str = this.$route.meta.layout
-    const a = str.charAt(0).toUpperCase() + str.slice(1) + 'Layout';
-    console.log(a);
-    return a;
+    //layout define
+    return (this.$route.meta.layout || 'empty') + '-layout'
   }
 }
 </script>
