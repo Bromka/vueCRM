@@ -1,13 +1,12 @@
 <template>
   <div class="app-main-layout">
+    <Navbar @click="isOpen = !isOpen" />
 
-    <Navbar />
-
-    <Sidebar />
+    <Sidebar v-model="isOpen" />
 
     <main class="app-content">
       <div class="app-page">
-          <router-view></router-view>
+        <router-view></router-view>
       </div>
     </main>
 
@@ -19,16 +18,17 @@
   </div>
 </template>
 <script lang="ts">
-  import { Component, Vue } from "vue-property-decorator";
-  import Navbar from '@/components/app/Navbar.vue';
-  import Sidebar from '@/components/app/Sidebar.vue';
+import { Component, Vue } from "vue-property-decorator";
+import Navbar from "@/components/app/Navbar.vue";
+import Sidebar from "@/components/app/Sidebar.vue";
 
-  @Component({
-    components: {
-      Navbar,
-      Sidebar
-    }
-  })
-  export default class App extends Vue {
+@Component({
+  components: {
+    Navbar,
+    Sidebar
   }
+})
+export default class App extends Vue {
+  isOpen = true;
+}
 </script>
