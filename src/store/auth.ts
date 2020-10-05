@@ -17,14 +17,14 @@ export default {
 
 
         },
-        async logout(){
+        async logout({commit}:any){
             await firebase.auth().signOut()
+            commit('clearInfo')
         },
         async register({dispatch, commit}:any, {email, password, name}:any){
             try {
                 const a = await firebase.auth().createUserWithEmailAndPassword(email, password)
                 const uid = await dispatch('getUid')
-                console.log(uid)
                 await firebase.database().ref(`/users/${uid}/info`).set({
                     bill: 10000,
                     name

@@ -22,15 +22,11 @@ export default new Vuex.Store({
 
   },
   actions: {
-    async currency(context:any){
+    async fetchCurrency(context:any){
       const url = 'https://www.cbr-xml-daily.ru/daily_json.js'
-      try {
         const response = await fetch(url)
         const JSON = await response.json();
-        context.commit('setCurrency', JSON)
-      } catch (e) {
-        console.error('error', e)
-      }
+        return JSON
     }
   },
   getters:{

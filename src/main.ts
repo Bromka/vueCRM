@@ -3,6 +3,7 @@ import App from "./App.vue";
 import date from '@/filters/date'
 
 import router from "@/router";
+import Loader from '@/components/app/Loader.vue'
 import store from '@/store'
 import Vuelidate from 'vuelidate'
 import Plugins from '@/utils/message.plugin.ts'
@@ -16,6 +17,7 @@ import 'materialize-css/dist/js/materialize.min'
 
 Vue.use(Plugins)
 Vue.use(Vuelidate)
+Vue.component('Loader', Loader)
 
 Vue.filter('date', date)
 Vue.config.productionTip = false;
