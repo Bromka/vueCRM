@@ -1,6 +1,16 @@
 export default {
-  state: {},
-  mutations: {},
-  actions: {},
-  getters: {},
+    state: {
+        info: {}
+    },
+    mutations: {},
+    actions: {
+        fetchInfo({dispatch, commit}:any) {
+            console.log(dispatch.getUid)
+        }
+    },
+    getters: {
+        info: (state: any) => {
+            return state.info
+        }
+    },
 };

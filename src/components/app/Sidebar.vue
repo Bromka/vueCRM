@@ -7,6 +7,7 @@
 </template>
 <script lang="ts">
   import {Component, Vue, Prop} from "vue-property-decorator";
+
 interface Link {
   title: string;
   linkTo: string;
@@ -16,7 +17,7 @@ interface Link {
 @Component
 export default class App extends Vue {
 
-  @Prop(Boolean) readonly isOpen: boolean;
+  @Prop() isOpen: boolean | undefined;
 
   links: Array<Link> = [
     {

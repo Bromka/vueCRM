@@ -23,7 +23,7 @@ const routes: Array<RouteConfig> = [
     name: "Register",
     meta: {layout: 'empty'},
     component: () =>
-        import(/* webpackChunkName: "about" */ "../views/Register.vue")
+        import("../views/Register.vue")
   },
   {
     path: "/categories",
