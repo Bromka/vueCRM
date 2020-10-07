@@ -32,15 +32,9 @@ export default class Home extends Vue {
 
   async mounted(){
     this.currency = await this.$store.dispatch('fetchCurrency')
-    console.log(this.currency)
     this.loading = false;
   }
-  @Watch('currency')
-  onCur(){
-    console.log(getCurrencyArray(this.currency))
-    return getCurrencyArray(this.currency)
 
-  }
 
 
 

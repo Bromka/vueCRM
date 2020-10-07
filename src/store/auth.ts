@@ -1,5 +1,4 @@
 import firebase from "firebase/app";
-import Any = jasmine.Any;
 
 // @ts-ignore
 export default {

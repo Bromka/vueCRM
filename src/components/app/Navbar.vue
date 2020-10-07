@@ -65,7 +65,8 @@ export default class App extends Vue {
 
 
   }
-  get info(){
+  get
+  info(){
       return this.$store.getters.info
   }
   beforeDestroy() {

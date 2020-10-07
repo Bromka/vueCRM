@@ -20,13 +20,14 @@ export default {
                 commit('setInfo', b)
             }
             catch (e) {
-                console.error(e)
+                return null
             }
 
         }
     },
     getters: {
         info: (state: any) => {
+            console.log('state.info', state.info)
             return state.info
         }
     },

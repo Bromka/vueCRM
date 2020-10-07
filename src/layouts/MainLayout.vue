@@ -22,7 +22,6 @@
 import { Component, Vue } from "vue-property-decorator";
 import Navbar from "@/components/app/Navbar.vue";
 import Sidebar from "@/components/app/Sidebar.vue";
-// import MoonLoader from "vue-spinner/src/MoonLoader.vue";
 
 @Component({
   components: {
@@ -35,19 +34,17 @@ export default class App extends Vue {
   isOpen = true;
 
   async mounted() {
-    await this.$store.dispatch("currency");
+    await this.$store.dispatch("fetchCurrency");
+
     if (!Object.keys(this.$store.getters.info).length) {
-      try {
         const a = await this.$store.dispatch("fetchInfo");
-      } catch (e) {
-        await this.$router.push("/login");
-      }
+
+        if (!Object.keys(this.$store.getters.info).length) {
+          console.log(!Object.keys(this.$store.getters.info).length)
+          await this.$router.push("/login")
+        }
+
     } else {
-      await this.$router.push("/login");
-    }
-  }
-  async updated() {
-    if (!Object.keys(this.$store.getters.info).length) {
       await this.$router.push("/login");
     }
   }
